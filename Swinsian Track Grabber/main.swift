@@ -1,20 +1,8 @@
-//
-//  main.swift
 //  Swinsian Track Grabber
-//
-//  Created by Sean Graham on 7/19/22.
-//
+//  radio.dosburros.com
 
 import Foundation
 import ScriptingBridge
-
-@objc protocol SwinsianTrack {
-    @objc optional var name: String {get}
-    @objc optional var artist: String {get}
-    @objc optional var album: String {get}
-    @objc optional var duration: Double {get}
-    @objc optional var id: String {get}
-}
 
 /*
  * This is stolen from https://github.com/bmsimons/itunescli/blob/master/itunescli/bridge.swift
@@ -27,6 +15,14 @@ import ScriptingBridge
     case paused = 0x6b505370 /* 'kPSp' */
     case fastForwarding = 0x6b505346 /* 'kPSF' */
     case rewinding = 0x6b505352 /* 'kPSR' */
+}
+
+@objc protocol SwinsianTrack {
+    @objc optional var name: String {get}
+    @objc optional var artist: String {get}
+    @objc optional var album: String {get}
+    @objc optional var duration: Double {get}
+    @objc optional var id: String {get}
 }
 
 @objc protocol swinsianApplication {
